@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Confirmation Form</title>
 </head>
+
 <body>
 
 <h2>Event Confirmation</h2>
 
 <button id="zammad-feedback-form">Confirm Attendance</button>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<!-- 1. jQuery MUST load first -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 2. Zammad form script -->
 <script src="https://stg.quinndesk.sirius-support.com/assets/form/form.js"></script>
 
+<!-- 3. Initialization -->
 <script>
 $(function () {
     $('#zammad-feedback-form').ZammadForm({
+        agreementMessage: `By submitting this form, you confirm that you will attend both the Friday training session and the Saturday event.
+<br><br>
+Failure to attend without prior notice may result in a record being placed on your profile, which could affect future opportunities.`,
+
         messageTitle: 'Confirmation Form',
         messageSubmit: 'Submit',
-        messageThankYou: 'Thank you for submitting your confirmation. Your spot is reserved and hope to see you at the event.',
+
+        messageThankYou: 'Thank you for submitting your confirmation. Hope to see you at the event.',
+
         showTitle: true,
         modal: true
     });
