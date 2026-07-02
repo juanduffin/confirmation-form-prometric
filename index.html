@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation Form</title>
+</head>
+<body>
+
+<h2>Event Confirmation</h2>
+
+<button id="zammad-feedback-form">Confirm Attendance</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://stg.quinndesk.sirius-support.com/assets/form/form.js"></script>
+
+<script>
+$(function () {
+    $('#zammad-feedback-form').ZammadForm({
+        messageTitle: 'Confirmation Form',
+        messageSubmit: 'Submit',
+        messageThankYou: 'Thank you for submitting your confirmation. Your spot is reserved and hope to see you at the event.',
+        showTitle: true,
+        modal: true
+    });
+});
+</script>
+
+</body>
+</html>
